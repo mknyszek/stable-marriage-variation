@@ -9,11 +9,16 @@ Like in the stable marriage problem, Joe Greedy wants to ﬁnd a stable pairing 
 n women w1;:::;wn with some given lists of preferences. Despite the simplicity of the Propose & Reject
 procedure, Joe feels like it does not appeal to his innate sense of aesthetics. Instead, he decides he will use
 the following procedure:
+
 (a) Start by assigning man mi with women wi for all i = 1:::n.
 In other words, let S = {(m1;w1);:::;(mn;wn)}.
+
 (b) Repeat everyday the following unless there is no rogue pair in S:
+    
     (a’) Pick a rogue pair (m∗;w∗).
+    
     (b’) Swap partners so that m∗ and w∗ are together in the new pairing. That is, if we previously had S = {:::;(m∗;w′);:::;(m′;w∗);:::}, we now have S = {:...,(m∗;,w∗);:::;(m′;w′);:::} while the other couples remain the same.
+
 Does this procedure work no matter how Joe picks the rogue pair in step (a)? Prove or give counter example.
 
 The Code
