@@ -15,9 +15,9 @@ In other words, let S = {(m1;w1);:::;(mn;wn)}.
 
 (b) Repeat everyday the following unless there is no rogue pair in S:
     
-    (a’) Pick a rogue pair (m∗;w∗).
+  (a’) Pick a rogue pair (m∗;w∗).
     
-    (b’) Swap partners so that m∗ and w∗ are together in the new pairing. That is, if we previously had S = {:::;(m∗;w′);:::;(m′;w∗);:::}, we now have S = {:...,(m∗;,w∗);:::;(m′;w′);:::} while the other couples remain the same.
+  (b’) Swap partners so that m∗ and w∗ are together in the new pairing. That is, if we previously had S = {:::;(m∗;w′);:::;(m′;w∗);:::}, we now have S = {:...,(m∗;,w∗);:::;(m′;w′);:::} while the other couples remain the same.
 
 Does this procedure work no matter how Joe picks the rogue pair in step (a)? Prove or give counter example.
 
