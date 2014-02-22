@@ -73,3 +73,38 @@ def find_cycles(g, p):
                 return True
     return o
 
+if __name__ == "__main__":
+    print "-- Input Preference Lists --"
+    n = int(raw_input('Number of Men/Women: '))
+    m = {}
+    w = {}
+    print "*** Comma Separated Only! ***"
+    print "*** Put More Preferred First!***"
+    for i in range(n):
+        k = raw_input('Preference list for Man ' + str(i) + ': ')
+        l = k.split(',')
+        m[str(i)] = {}
+        count = n
+        for j in l:
+            m[str(i)][j] = count
+            count = count - 1
+        
+    for i in range(n):
+        k = raw_input('Preference list for Woman ' + str(chr(i+65)) + ': ')
+        l = k.split(',')
+        w[str(chr(i+65))] = {}
+        count = n
+        for j in l:
+            w[str(chr(i+65))][j] = count
+            count = count - 1
+        
+    print "-- Input Initial Pairing --"
+    p = []
+    for i in range(n):
+        k = raw_input('Spouse for Woman ' + str(chr(i+65)) + ': ')
+        p.append(k)
+    p = tuple(p)
+    graph = {}
+    populate_graph(graph, m, w, p)
+    print "Found Cycles?"
+    print find_cycles(graph, p)
