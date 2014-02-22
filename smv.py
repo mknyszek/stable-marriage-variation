@@ -78,15 +78,17 @@ if __name__ == "__main__":
     n = int(raw_input('Number of Men/Women: '))
     m = {}
     w = {}
-    print "*** Comma Separated Only! ***"
+    print "*** Comma Separated Only (NO SPACES)! ***"
     print "*** Put More Preferred First!***"
+    print "*** Male names are 1, 2, 3, ... ***"
+    print "*** Female names are A, B, C, ... ***"
     for i in range(n):
         k = raw_input('Preference list for Man ' + str(i) + ': ')
         l = k.split(',')
         m[str(i)] = {}
         count = n
         for j in l:
-            m[str(i)][j] = count
+            m[str(i)][str(j)] = count
             count = count - 1
         
     for i in range(n):
@@ -102,9 +104,9 @@ if __name__ == "__main__":
     p = []
     for i in range(n):
         k = raw_input('Spouse for Woman ' + str(chr(i+65)) + ': ')
-        p.append(k)
+        p.append((str(chr(i+65)),k))
     p = tuple(p)
     graph = {}
     populate_graph(graph, m, w, p)
-    print "Found Cycles?"
-    print find_cycles(graph, p)
+    print "Found Cycles?" + str(find_cycles(graph, p))
+
